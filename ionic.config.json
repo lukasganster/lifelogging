@@ -1,0 +1,7 @@
+{
+  "name": "lifelogging",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

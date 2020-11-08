@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lifelogging
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Date:</ion-label>
+    <ion-datetime displayFormat="DD MM YYYY" pickerFormat="YYYY MM DD" placeholder="Select Date" [(ngModel)]="record.date"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Day Focus:</ion-label>
+    <ion-select [(ngModel)]="record.type" okText="Okay" cancelText="Dismiss" placeholder="Select focus type">
+      <ion-select-option value="Leisure">Leisure</ion-select-option>
+      <ion-select-option value="Work">Work</ion-select-option>
+      <ion-select-option value="Education">Education</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Overall: {{record.overall}}
+    </ion-label>
+    <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="record.overall"></ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Social: {{record.social}}
+    </ion-label>
+    <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="record.social"></ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Health: {{record.health}}
+    </ion-label>
+    <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="record.health"></ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Health Complaints
+    </ion-label>
+    <ion-select [(ngModel)]="record.healthComplaints" multiple="true" okText="Okay" cancelText="Dismiss" placeholder="None">
+      <ion-select-option value="None">None</ion-select-option>
+      <ion-select-option value="Headache">Headache</ion-select-option>
+      <ion-select-option value="Poor">Poor</ion-select-option>
+      <ion-select-option value="Knee pain">Knee pain</ion-select-option>
+      <ion-select-option value="Tension">Tension</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Wakeup:</ion-label>
+    <ion-datetime displayFormat="HH mm" placeholder="Select Wakeup time" [(ngModel)]="record.wakeup"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Sleep:</ion-label>
+    <ion-datetime displayFormat="HH mm" placeholder="Select Sleep time" [(ngModel)]="record.sleep"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Sport activity: {{record.sport}}
+    </ion-label>
+    <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="record.sport"></ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Weight: {{record.weight}}
+    </ion-label>
+    <ion-range min="70" max="90" step="0.1" snaps="true" [(ngModel)]="record.weight"></ion-range>
+  </ion-item>
+
+  <ion-button (click)="saveRecord()" expand="full">
+    Save
+  </ion-button>
+  
+
+</ion-content>
