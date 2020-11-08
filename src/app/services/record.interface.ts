@@ -7,8 +7,8 @@ export interface Record {
     social?: number;
     health?: number;
     healthComplaints?: String;
-    wakeup?: Date;
-    sleep?: Date;
+    wakeup?: any;
+    sleep?: any;
     bedtime?;
     sleepQuality?: number;
     sport?: number;

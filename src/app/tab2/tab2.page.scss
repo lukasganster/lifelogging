@@ -3,3 +3,18 @@ ion-item{
         font-size:0.7em;
     }
 }
+
+ion-button{
+    color:black;
+}
+
+.datepicker{
+    ion-button{
+        width:25%;
+        color:white;
+    }
+    ion-datetime{
+        width:50%;
+        text-align: center;
+    }
+}

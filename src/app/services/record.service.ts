@@ -10,7 +10,8 @@ export class RecordService {
 
   createNewRecord():Record{
     return {
-      id:Math.ceil(Math.random()*10000).toString()
+      id:Math.ceil(Math.random()*10000).toString(),
+      date:new Date().toISOString()
     };
   }
 }
