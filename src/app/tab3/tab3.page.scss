@@ -1,0 +1,44 @@
+@keyframes fadeInAndSpin {
+
+    100% {
+        opacity: 1;
+        transform: rotate3d(1, 1, 0, 0deg);
+        transform: scale(1);
+        transform: rotate(0deg);
+        transform: skew(0deg);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+ion-content{
+    background: white;
+    --background: white;
+}
+
+.svg {
+    opacity: 0;
+    transform: rotate3d(1, 1, 0, 200deg);
+    transform: scale(1.6);
+    transform: skew(-60deg);
+    //transform: rotate(20deg);
+    animation: 4s 0.3s ease-in-out fadeInAndSpin;
+    animation-fill-mode: forwards;
+}
+
+.st8{
+    opacity: 0;
+    transform: rotate3d(-1, -1, 90, 100deg);
+    transform: scale(1.2);
+    transform: skew(60deg);
+    //transform: rotate(20deg);
+    animation: 4s 0.2s ease fadeInAndSpin;
+    animation-fill-mode: forwards;
+}
