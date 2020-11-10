@@ -12,7 +12,7 @@
       <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
    
-    <ion-datetime displayFormat="DDD, DD.MMM YYYY" dayShortNames="[Sun,Mon,Tue,Wed,Thu,Fri,Sat]" placeholder="Select Date" [(ngModel)]="record.date"></ion-datetime>
+    <ion-datetime displayFormat="DDD, DD.MMM YYYY" name="date" ngDefaultControl dayShortNames="[Sun,Mon,Tue,Wed,Thu,Fri,Sat]" placeholder="Select Date" [(ngModel)]="record.date" (ngModelChange)="dateChanged()"></ion-datetime>
     <ion-button fill="clear" (click)="dayForward()">
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-button>
@@ -21,7 +21,7 @@
 
   <ion-item>
     <ion-label>Day Focus:</ion-label>
-    <ion-select [(ngModel)]="record.type" okText="Okay" cancelText="Dismiss" placeholder="Select focus type">
+    <ion-select [(ngModel)]="record.type" okText="Okay" cancelText="Dismiss" placeholder="Select focus type" name="focus" ngDefaultControl>
       <ion-select-option value="Leisure">Leisure</ion-select-option>
       <ion-select-option value="Work">Work</ion-select-option>
       <ion-select-option value="Education">Education</ion-select-option>
@@ -32,28 +32,28 @@
     <ion-label>
       Overall: {{record.overall}}
     </ion-label>
-    <ion-range min="1" max="10" step="1" [(ngModel)]="record.overall"></ion-range>
+    <ion-range min="1" max="10" step="1" [(ngModel)]="record.overall" name="overall" ngDefaultControl></ion-range>
   </ion-item>
 
   <ion-item>
     <ion-label>
       Social: {{record.social}}
     </ion-label>
-    <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="record.social"></ion-range>
+    <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="record.social" name="social" ngDefaultControl></ion-range>
   </ion-item>
 
   <ion-item>
     <ion-label>
       Health: {{record.health}}
     </ion-label>
-    <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="record.health"></ion-range>
+    <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="record.health" name="health" ngDefaultControl></ion-range>
   </ion-item>
 
   <ion-item>
     <ion-label>
       Health Complaints
     </ion-label>
-    <ion-select [(ngModel)]="record.healthComplaints" multiple="true" okText="Okay" cancelText="Dismiss" placeholder="None">
+    <ion-select [(ngModel)]="record.healthComplaints" multiple="true" okText="Okay" cancelText="Dismiss" placeholder="None" name="complaints" ngDefaultControl> 
       <ion-select-option value="None">None</ion-select-option>
       <ion-select-option value="Headache">Headache</ion-select-option>
       <ion-select-option value="Poor">Poor</ion-select-option>
@@ -64,31 +64,31 @@
 
   <ion-item>
     <ion-label>Wakeup:</ion-label>
-    <ion-datetime displayFormat="HH:mm" placeholder="Select Wakeup time" [(ngModel)]="record.wakeup"></ion-datetime>
+    <ion-datetime displayFormat="HH:mm" placeholder="Select Wakeup time" [(ngModel)]="record.wakeup" name="wakeup" ngDefaultControl></ion-datetime>
   </ion-item>
 
   <ion-item>
     <ion-label>Sleep:</ion-label>
-    <ion-datetime displayFormat="HH:mm" placeholder="Select Sleep time" [(ngModel)]="record.sleep"></ion-datetime>
+    <ion-datetime displayFormat="HH:mm" placeholder="Select Sleep time" [(ngModel)]="record.sleep" name="sleep" ngDefaultControl></ion-datetime>
   </ion-item>
 
   <ion-item>
     <ion-label>Bedtime:</ion-label>
-    <ion-label [(ngModel)]="record.bedtime"></ion-label>
+    <ion-label [(ngModel)]="record.bedtime" name="bedtime" ngDefaultControl></ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label>
       Sport activity: {{record.sport}}
     </ion-label>
-    <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="record.sport"></ion-range>
+    <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="record.sport" name="sport" ngDefaultControl></ion-range>
   </ion-item>
 
   <ion-item>
     <ion-label>
       Weight: {{record.weight}}
     </ion-label>
-    <ion-range min="70" max="90" step="0.1" snaps="true" [(ngModel)]="record.weight"></ion-range>
+    <ion-range min="70" max="90" step="0.1" snaps="true" [(ngModel)]="record.weight" name="weight" ngDefaultControl></ion-range>
   </ion-item>
 
   <ion-button (click)="saveRecord()" expand="full">
