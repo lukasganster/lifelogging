@@ -12,7 +12,7 @@ export class RecordService {
 
   constructor() { }
 
-  public records = [];
+  public records = {};
 
   createNewRecord():Record{
     return {
@@ -22,9 +22,13 @@ export class RecordService {
   }
 
   saveToRecords(record){
-    this.getStorage().then(data =>{
-      this.records.push(record);
+    this.getStorage().then(() =>{
+      let id = record.id;
+      this.records[id] = record;
+      console.log("saving");
       console.log(this.records);
+      console.log(JSON.stringify(this.records,null,2));
+
       this.setStorage();
     });
   }
@@ -32,11 +36,7 @@ export class RecordService {
   async getRecord(id){
     var returnValue;
     await this.getStorage().then(data =>{
-      var returnRecord;
-      this.records.forEach(record => {
-        if(record.id == id)
-          returnRecord = record;
-      });
+      var returnRecord = this.records[id];
       returnValue = returnRecord;
     });
     return returnValue;
@@ -55,7 +55,7 @@ export class RecordService {
   async getStorage() {
     const { value } = await Storage.get({ key: 'records' });
     this.records = JSON.parse(value);
-    if(!this.records) this.records = [];
+    if(!this.records) this.records = {};
   }
   
 

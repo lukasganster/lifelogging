@@ -17,7 +17,7 @@ export class Tab2Page implements OnInit{
 
   ngOnInit(): void {
     this.record = this.recordService.createNewRecord();
-    console.log(this.record);
+    this.dateChanged();
   }
   
 
@@ -42,6 +42,7 @@ export class Tab2Page implements OnInit{
     let date = this.record.date;
     this.record = this.recordService.createNewRecord();
     this.record.date = date;
+    this.dateChanged();
   }
 
   public dayForward(){

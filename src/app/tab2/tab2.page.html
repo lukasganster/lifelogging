@@ -22,9 +22,9 @@
   <ion-item>
     <ion-label>Day Focus:</ion-label>
     <ion-select [(ngModel)]="record.type" okText="Okay" cancelText="Dismiss" placeholder="Select focus type" name="focus" ngDefaultControl>
-      <ion-select-option value="Leisure">Leisure</ion-select-option>
-      <ion-select-option value="Work">Work</ion-select-option>
-      <ion-select-option value="Education">Education</ion-select-option>
+      <ion-select-option [value]="1">Leisure</ion-select-option>
+      <ion-select-option [value]="2">Work</ion-select-option>
+      <ion-select-option [value]="3">Education</ion-select-option>
     </ion-select>
   </ion-item>
 
@@ -53,23 +53,23 @@
     <ion-label>
       Health Complaints
     </ion-label>
-    <ion-select [(ngModel)]="record.healthComplaints" multiple="true" okText="Okay" cancelText="Dismiss" placeholder="None" name="complaints" ngDefaultControl> 
-      <ion-select-option value="None">None</ion-select-option>
-      <ion-select-option value="Headache">Headache</ion-select-option>
-      <ion-select-option value="Poor">Poor</ion-select-option>
-      <ion-select-option value="Knee pain">Knee pain</ion-select-option>
-      <ion-select-option value="Tension">Tension</ion-select-option>
+    <ion-select [(ngModel)]="record.healthComplaints" multiple="true" okText="Okay" cancelText="Dismiss" placeholder="Select health complaints" name="complaints" ngDefaultControl> 
+      <ion-select-option [value]="1">None</ion-select-option>
+      <ion-select-option [value]="2">Headache</ion-select-option>
+      <ion-select-option [value]="3">Poor</ion-select-option>
+      <ion-select-option [value]="4">Knee pain</ion-select-option>
+      <ion-select-option [value]="5">Tension</ion-select-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label>Wakeup:</ion-label>
-    <ion-datetime displayFormat="HH:mm" placeholder="Select Wakeup time" [(ngModel)]="record.wakeup" name="wakeup" ngDefaultControl></ion-datetime>
+    <ion-datetime displayFormat="HH:mm" placeholder="When did u wake up?" [(ngModel)]="record.wakeup" name="wakeup" ngDefaultControl></ion-datetime>
   </ion-item>
 
   <ion-item>
     <ion-label>Sleep:</ion-label>
-    <ion-datetime displayFormat="HH:mm" placeholder="Select Sleep time" [(ngModel)]="record.sleep" name="sleep" ngDefaultControl></ion-datetime>
+    <ion-datetime displayFormat="HH:mm" placeholder="When did you go to bed?" [(ngModel)]="record.sleep" name="sleep" ngDefaultControl></ion-datetime>
   </ion-item>
 
   <ion-item>
