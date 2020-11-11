@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Record } from './record.interface';
 import { Plugins } from '@capacitor/core';
 import { isRegExp } from 'util';
+import * as moment from 'moment';
 
 const { Storage } = Plugins;
 
@@ -38,6 +39,21 @@ export class RecordService {
     await this.getStorage().then(data =>{
       var returnRecord = this.records[id];
       returnValue = returnRecord;
+    });
+    return returnValue;
+  }
+
+  async getLastSevenDays(){
+    var returnValue;
+    await this.getStorage().then(()=>{
+      let helpArray = []; 
+      for(var key in this.records){
+        var value = this.records[key];
+        if(moment(value.date).isSameOrBefore(moment()))
+          helpArray.push(value);
+      };
+      helpArray.sort((a,b) => (a.date > b.date) ? -1 : ((b.date > a.date) ? 1 : 0));
+      returnValue =  helpArray.slice(0,7);
     });
     return returnValue;
   }

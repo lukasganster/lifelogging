@@ -17,11 +17,10 @@ export class Tab2Page implements OnInit{
 
   ngOnInit(): void {
     this.record = this.recordService.createNewRecord();
-    this.dateChanged();
+    this.checkDate();
   }
   
-
-  private record;
+  public record;
 
   public saveRecord(){
     this.record.date = moment(this.record.date);
@@ -42,22 +41,22 @@ export class Tab2Page implements OnInit{
     let date = this.record.date;
     this.record = this.recordService.createNewRecord();
     this.record.date = date;
-    this.dateChanged();
+    this.checkDate();
   }
 
   public dayForward(){
     let newDate = moment(this.record.date).add('days',1);
     this.record.date = newDate.toISOString();
-    this.dateChanged();
+    this.checkDate();
   }
 
   public dayBack(){
     let newDate = moment(this.record.date).add('days',-1);
     this.record.date = newDate.toISOString();
-    this.dateChanged();
+    this.checkDate();
   }
 
-  public dateChanged(){
+  public checkDate(){
     this.recordService.getRecord(moment(this.record.date).format("YYYY-MM-DD")).then((fromStorage) => {
       if(fromStorage != null){
         this.record = fromStorage;

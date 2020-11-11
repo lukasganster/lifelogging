@@ -1,0 +1,14 @@
+.averageOverall7Days {
+	font-size: 15px;
+	display: block;
+	margin: 100px auto;
+	ion-text {
+		font-size: 60px;
+		display: block;
+	}
+	text-align: center;
+}
+
+canvas {
+	transform: scale(0.9) translateX(-10px);
+}

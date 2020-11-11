@@ -1,14 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Lifelogging
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-
- 
-
+  <div class="averageOverall7Days">
+    Average last 7 days
+    <ion-text color="primary">{{averageOverall7Days}}</ion-text>
+  </div>
+  <canvas #barChart></canvas>
 </ion-content>

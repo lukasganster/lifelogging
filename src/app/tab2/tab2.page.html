@@ -12,7 +12,7 @@
       <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
    
-    <ion-datetime displayFormat="DDD, DD.MMM YYYY" name="date" ngDefaultControl dayShortNames="[Sun,Mon,Tue,Wed,Thu,Fri,Sat]" placeholder="Select Date" [(ngModel)]="record.date" (ngModelChange)="dateChanged()"></ion-datetime>
+    <ion-datetime displayFormat="DDD, DD.MMM YYYY" name="date" ngDefaultControl dayShortNames="[Sun,Mon,Tue,Wed,Thu,Fri,Sat]" placeholder="Select Date" [(ngModel)]="record.date" (ngModelChange)="checkDate()"></ion-datetime>
     <ion-button fill="clear" (click)="dayForward()">
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-button>
